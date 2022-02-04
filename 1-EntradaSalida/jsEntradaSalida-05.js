@@ -4,13 +4,18 @@ ej.: "Usted se llama José y tiene 66 años" 	*/
 function mostrar()
 
 {	
- let nombre;
-     nombre = document.getElementById("txtIdNombre").value;
-  
-  let edad;
-	edad = document.getElementById("txtIdEdad").value;
+//variables declaradas
 
+ let nombreIngresado; 
+ let edadIngresada;
+ let mensajeMostrar;
+	
+//datos 
 
-	alert("usted se llama "+nombre+" y tiene "+edad+" años");
+	edadIngresada = document.getElementById("txtIdEdad").value;
+    nombreIngresado = document.getElementById("txtIdNombre").value;
+
+//concatenar (+)
+    mensajeMostrar = "usted se llama "+nombreIngresado+" y tiene "+edadIngresada+" años";
+	alert(mensajeMostrar);
 }
-
