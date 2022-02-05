@@ -6,10 +6,11 @@ en el cuadro de texto "RESULTADO".*/
 function mostrarAumento()
 {
 //variables declaradas
+
   let sueldoIngresado;
   let resultadoSueldo;	
   let aumento;
-  let resultado;
+  
 
 
 //si no lo ordenaba de esta manera no funcionaba :C
