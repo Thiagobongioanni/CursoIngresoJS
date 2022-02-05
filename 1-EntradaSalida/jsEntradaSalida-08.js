@@ -18,7 +18,7 @@ function SacarResto()
 
  //concatenar
 
-   resultado = numero1 % numero2;
+   resultado = numero1 / numero2;
    mensaje = "el resto es " + resultado;
    alert(mensaje);	
 	
