@@ -17,7 +17,7 @@ numero3 = parseInt(document.getElementById("txtIdPrecioTres").value);
 
 resultado = numero1 + numero2 + numero3;
 mensaje = "el total es " + resultado;
-alert(mensaje)
+alert(mensaje);
 
 
 
@@ -36,11 +36,11 @@ precio1 = parseFloat(document.getElementById("txtIdPrecioUno").value);
 precio2	= parseFloat(document.getElementById("txtIdPrecioDos").value);
 precio3 = parseFloat(document.getElementById("txtIdPrecioTres").value);
 
-promedio = (precio1+precio2+precio3)
-resultado = promedio/3
+promedio = (precio1+precio2+precio3);
+resultado = promedio/3;
 
 mensaje = "el promedio de los precios es " + resultado;
-alert(mensaje)
+alert(mensaje);
 
 
 }
@@ -52,7 +52,7 @@ let precios2;
 let precios3;
 let preciofinal;
 let total;
-let mensaje
+let mensaje;
 
 precios1 = parseFloat(document.getElementById("txtIdPrecioUno").value);
 precios2 = parseFloat(document.getElementById("txtIdPrecioDos").value);
@@ -62,7 +62,7 @@ preciofinal = precios1+precios2+precios3;
 
 total = preciofinal * 1.21;
 
-mensaje = "el precio final es " + total
-alert(mensaje)
+mensaje = "el precio final es " + total;
+alert(mensaje);
 
 }
