@@ -6,6 +6,7 @@ thiago bongioanni
 ejercicio 1 */
 function mostrar()
 {
-	alert("Hola Mundo segunda practica");
+
+alert("esto funciona de maravilla");
 }
 

@@ -18,4 +18,3 @@ function mostrar()
 //concatenar (+)
     mensajeMostrar = "usted se llama "+nombreIngresado+" y tiene "+edadIngresada+" años";
 	alert(mensajeMostrar);
-}
