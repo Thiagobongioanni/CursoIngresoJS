@@ -1,7 +1,14 @@
+//thiago bongioanni ejercicio 2 if
 function mostrar()
 {
-	//tomo la edad  
-	alert("ok");
-	
 
-}//FIN DE LA FUNCIÓN
+let edad;
+
+   edad = parseInt(document.getElementById("txtIdEdad").value);
+
+
+   if(edad >= 18){
+   alert("la persona es mayor de edad");
+   }
+
+}

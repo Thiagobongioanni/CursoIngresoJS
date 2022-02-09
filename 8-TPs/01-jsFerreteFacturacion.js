@@ -29,17 +29,16 @@ let precio1;
 let precio2;
 let precio3;
 let promedio;
-let resultado;
 let mensaje;
 
 precio1 = parseFloat(document.getElementById("txtIdPrecioUno").value);
 precio2	= parseFloat(document.getElementById("txtIdPrecioDos").value);
 precio3 = parseFloat(document.getElementById("txtIdPrecioTres").value);
 
-promedio = (precio1+precio2+precio3);
-resultado = promedio/3;
+promedio = (precio1+precio2+precio3)/3;
 
-mensaje = "el promedio de los precios es " + resultado;
+
+mensaje = "el promedio de los precios es " + promedio;
 alert(mensaje);
 
 
@@ -50,17 +49,17 @@ function PrecioFinal ()
 let precios1;
 let precios2;
 let precios3;
-let preciofinal;
 let total;
+let precioFinal;
 let mensaje;
 
 precios1 = parseFloat(document.getElementById("txtIdPrecioUno").value);
 precios2 = parseFloat(document.getElementById("txtIdPrecioDos").value);
 precios3 = parseFloat(document.getElementById("txtIdPrecioTres").value);
 
-preciofinal = precios1+precios2+precios3;
+precioFinal = precios1+precios2+precios3;
 
-total = preciofinal * 1.21;
+total = precioFinal * 1.21;
 
 mensaje = "el precio final es " + total;
 alert(mensaje);
