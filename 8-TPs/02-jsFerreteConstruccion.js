@@ -9,17 +9,18 @@ function Rectangulo ()
 {
 let largoTerreno;
 let anchoTerreno;
+let totalAlambres
 let calculoTerreno;
-let calculoDiametro;
 let mensaje;
 
-largoTerreno = parseInt(document.getElementById("txtIdLargo").value);
-anchoTerreno = parseInt(document.getElementById("txtIdAncho").value);
+largoTerreno = parseFloat(document.getElementById("txtIdLargo").value);
+anchoTerreno = parseFloat(document.getElementById("txtIdAncho").value);
 
 
- calculoTerreno = (largoTerreno + anchoTerreno)*3;
+ calculoTerreno = (largoTerreno + anchoTerreno)*2;
+ totalAlambres = calculoTerreno * 3;
 
- mensaje =  "la cantidad de metros de alambre a comprar es de " + calculoTerreno;
+ mensaje =  "la cantidad de metros de alambre a comprar es de " + totalAlambres;
  alert(mensaje);
 
 }
@@ -31,7 +32,7 @@ let totalAlambres;
 let mensaje;
 
 
-radioTerreno = parseInt(document.getElementById("txtIdRadio").value);
+radioTerreno = parseFloat(document.getElementById("txtIdRadio").value);
 
 calculoDiametro = radioTerreno *2;
 calculoTerreno = calculoDiametro * 3;
@@ -59,6 +60,5 @@ bolsasCemento = calculoMetrosCuadrados * 2;
 
 mensaje = "la cantidad de bolsas de cal que necesitas es de " +bolsasCal+ " y la cantidad de bolsas de cemento es de " +bolsasCemento;
 alert(mensaje);
-
 
 }
