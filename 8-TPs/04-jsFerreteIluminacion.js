@@ -10,13 +10,13 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
-let cantidad;
-let calculoDescuento;
-let precioDescontado;
-let marcaLamparas;
-let Precio = 35;
-let precioConImpuesto;
-let precioFinal;
+ let cantidad;
+ let calculoDescuento;
+ let precioDescontado;
+ let marcaLamparas;
+ let Precio = 35;
+
+
 
     cantidad = parseInt(document.getElementById("txtIdCantidad").value);
     marcaLamparas = document.getElementById("Marca").value;
@@ -33,7 +33,7 @@ let precioFinal;
         document.getElementById("txtIdprecioDescuento").value = precioDescontado;
         }
 
- 	else if (cantidad == 5 && marcaLamparas != "ArgentinaLuz"){
+ 	else if(cantidad == 5 && marcaLamparas != "ArgentinaLuz"){
              calculoDescuento = Precio * -0.30;
              precioDescontado = calculoDescuento + Precio;
              document.getElementById("txtIdprecioDescuento").value = precioDescontado;
@@ -44,18 +44,17 @@ let precioFinal;
         precioDescontado = calculoDescuento + Precio;
         document.getElementById("txtIdprecioDescuento").value = precioDescontado;
         }
-
-    else if (cantidad == 4 && marcaLamparas == "FelipeLamparas") {
+        
+        else if(cantidad == 4 && marcaLamparas == "FelipeLamparas"){
             calculoDescuento = Precio * -0.25;
             precioDescontado = calculoDescuento + Precio;
             document.getElementById("txtIdprecioDescuento").value = precioDescontado;
-            }
-    else{
+            }else{
             calculoDescuento = Precio * -0.20;
             precioDescontado = calculoDescuento + Precio;
             document.getElementById("txtIdprecioDescuento").value = precioDescontado;
-        }
-    if(cantidad == 3 && marcaLamparas == "ArgentinaLuz"){
+            }
+    /*if(cantidad == 3 && marcaLamparas == "ArgentinaLuz"){
        calculoDescuento = Precio * -0.15;
             precioDescontado = calculoDescuento + Precio;
             document.getElementById("txtIdprecioDescuento").value = precioDescontado;
@@ -69,16 +68,6 @@ let precioFinal;
         calculoDescuento = Precio * -0.05;
             precioDescontado = calculoDescuento + Precio;
             document.getElementById("txtIdprecioDescuento").value = precioDescontado;
-        } 
+        } */
 
-     if (precioDescontado > 120 || marcaLamparas != "Marca"){
-        calculoDescuento = Precio * 2.60;
-        precioDescontado = calculoDescuento + Precio;
-        precioConImpuesto = precioDescontado * 0.10;
-        precioFinal = precioDescontado + precioConImpuesto;    
-        document.getElementById("txtIdprecioDescuento").value = precioFinal;
-        parseInt(alert("IIBB Usted pago "+precioConImpuesto+" mas por ingresos brutos"));
-
-
-    }
 }

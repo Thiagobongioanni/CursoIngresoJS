@@ -4,31 +4,29 @@ B.	Al ingresar una temperatura en Centígrados debemos mostrar la temperatura en
 */
 function FahrenheitCentigrados () 
 {
-let temperaturaFaherenheit;
-let temperaturaCentigrados;
-let transformacion;
-let mensaje;
+  let temperaturaFaherenheit;
+  let transformacion;
+  let mensaje;
 
-    temperaturaFaherenheit = parseFloat(document.getElementById("txtIdTemperatura").value);
+      temperaturaFaherenheit = parseFloat(document.getElementById("txtIdTemperatura").value);
 
-    transformacion = (temperaturaFaherenheit - 32) * 5 / 9;
-    mensaje = +temperaturaFaherenheit+ " Fahrenheit son " +transformacion+ " centígrados";
+      transformacion = (temperaturaFaherenheit - 32) * 5 / 9;
+      mensaje = +temperaturaFaherenheit+ " Fahrenheit son " +transformacion+ " centígrados";
 
-    alert(mensaje);
+      alert(mensaje);
 }
 
 function CentigradosFahrenheit () 
 {
-let temperaturaCentigrados2;
-let temperaturaFaherenheit2;
-let transformacion2;
-let mensaje;
+  let temperaturaCentigrados2;
+  let transformacion2;
+  let mensaje;
 
-    temperaturaCentigrados2 = parseFloat(document.getElementById("txtIdTemperatura").value);
+      temperaturaCentigrados2 = parseFloat(document.getElementById("txtIdTemperatura").value);
 
-    transformacion2 = temperaturaCentigrados2 * 1.8 + 32;
-    mensaje = +temperaturaCentigrados2+ " centigrados son " +transformacion2+ " Fahrenheit";
+      transformacion2 = temperaturaCentigrados2 * 1.8 + 32;
+      mensaje = +temperaturaCentigrados2+ " centigrados son " +transformacion2+ " Fahrenheit";
 
-    lert(mensaje);
+      alert(mensaje);
 
 }
