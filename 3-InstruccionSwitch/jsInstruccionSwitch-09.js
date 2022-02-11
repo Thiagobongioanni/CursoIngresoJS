@@ -59,5 +59,22 @@ let aumento;
     		          break;
     	}
     }
+
+    if (estacionIngresada == "Primavera" || estacionIngresada == "Otoño"){ 
+
+    	switch(estadiaElejida){
+    		   case("Bariloche"):
+    		   case("Cataratas"):
+    		   case("Mar del plata"):
+    		         aumento = precioFijo * 0.10;
+    		         calculo = aumento + precioFijo;
+    		         alert("en total serian $"+calculo);
+    		         break;
+
+    		   default:
+    		         alert("en total serian $"+precioFijo);
+
+    	}
+    }
                 	   
 }
