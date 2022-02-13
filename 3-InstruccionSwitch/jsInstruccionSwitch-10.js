@@ -1,15 +1,15 @@
 function mostrar()
 {
-let estacionDelAño;
+let estacionDelAnio;
 let estadiaElejida;
 
     estadiaElejida = document.getElementById("txtIdDestino").value;
-    estacionDelAño = document.getElementById("txtIdEstacion").value;
+    estacionDelAnio = document.getElementById("txtIdEstacion").value;
     
-   if (estacionDelAño == "Invierno"){
+   if (estacionDelAnio == "Invierno"){
        
        switch(estadiaElejida){  
-    	      case("Bariloche"):
+              case("Bariloche"):
                     alert("se viaja");
                     break;
        default:
@@ -20,35 +20,35 @@ let estadiaElejida;
 
     }
 
-    if (estacionDelAño == "Verano"){
+    if (estacionDelAnio == "Verano"){
 
         switch(estadiaElejida){
-        	   case("Mar del plata"):
-        	   case("Cataratas"):
-        	         alert("se viaja");
-        	         break;
+               case("Mar del plata"):
+               case("Cataratas"):
+                     alert("se viaja");
+                     break;
         default:
                      alert("no se viaja");
         }
     }
 
-    if (estacionDelAño == "Primavera"){
+    if (estacionDelAnio == "Primavera"){
 
-    	switch(estadiaElejida){
-    		   case("Bariloche"):
-    		        alert("no se viaja");
-    		        break;
+        switch(estadiaElejida){
+               case("Bariloche"):
+                    alert("no se viaja");
+                    break;
         default:
                     alert("se viaja");
                     break;
-    	}
+        }
 
     }
 
-    switch(estacionDelAño){
-    	   case("Otoño"):
-    	        alert("se viaja");
-    	        break;
+    switch(estacionDelAnio){
+           case("Otoño"):
+                alert("se viaja");
+                break;
     }
    
 }
