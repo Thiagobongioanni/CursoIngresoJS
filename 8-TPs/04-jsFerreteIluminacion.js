@@ -15,59 +15,73 @@ function CalcularPrecio ()
  let precioDescontado;
  let marcaLamparas;
  let Precio = 35;
+ 
+
+
 
 
 
     cantidad = parseInt(document.getElementById("txtIdCantidad").value);
     marcaLamparas = document.getElementById("Marca").value;
 
-    if(cantidad >= 6 && marcaLamparas == "Osram") {
+    if(cantidad >= 6 && marcaLamparas == "Osram"){
        calculoDescuento = Precio * -0.50;
        precioDescontado = calculoDescuento + Precio;
-       document.getElementById("txtIdprecioDescuento").value = precioDescontado;
        }
 
-    if(cantidad == 5 && marcaLamparas == "ArgentinaLuz"){
+   else if(cantidad == 5 && marcaLamparas == "ArgentinaLuz"){
         calculoDescuento = Precio * -0.40;
         precioDescontado = calculoDescuento + Precio;
-        document.getElementById("txtIdprecioDescuento").value = precioDescontado;
-        }
+    }
 
- 	else if(cantidad == 5 && marcaLamparas != "ArgentinaLuz"){
-             calculoDescuento = Precio * -0.30;
-             precioDescontado = calculoDescuento + Precio;
-             document.getElementById("txtIdprecioDescuento").value = precioDescontado;
-             }
-
-     if(cantidad == 4 && marcaLamparas == "ArgentinaLuz"){
-        calculoDescuento = Precio * -0.25;
+    else if(cantidad == 5 && marcaLamparas  != "ArgentinaLuz"){
+        calculoDescuento = Precio * -0.30;
         precioDescontado = calculoDescuento + Precio;
-        document.getElementById("txtIdprecioDescuento").value = precioDescontado;
-        }
-        
-        else if(cantidad == 4 && marcaLamparas == "FelipeLamparas"){
-            calculoDescuento = Precio * -0.25;
-            precioDescontado = calculoDescuento + Precio;
-            document.getElementById("txtIdprecioDescuento").value = precioDescontado;
-            }else{
-            calculoDescuento = Precio * -0.20;
-            precioDescontado = calculoDescuento + Precio;
-            document.getElementById("txtIdprecioDescuento").value = precioDescontado;
-            }
-    /*if(cantidad == 3 && marcaLamparas == "ArgentinaLuz"){
-       calculoDescuento = Precio * -0.15;
-            precioDescontado = calculoDescuento + Precio;
-            document.getElementById("txtIdprecioDescuento").value = precioDescontado;
-         }
-   else if(cantidad == 3 && marcaLamparas == "FelipeLamparas") {
-            calculoDescuento = Precio * -0.10;
-            precioDescontado = calculoDescuento + Precio;
-            document.getElementById("txtIdprecioDescuento").value = precioDescontado;
-            } 
-    else{
-        calculoDescuento = Precio * -0.05;
-            precioDescontado = calculoDescuento + Precio;
-            document.getElementById("txtIdprecioDescuento").value = precioDescontado;
-        } */
+    }
 
+    else if (cantidad == 4 && marcaLamparas == "ArgentinaLuz"){
+             calculoDescuento = Precio * -0.25;
+             precioDescontado = calculoDescuento + Precio;
+
+    }
+
+    else if (cantidad == 4 && marcaLamparas == "FelipeLamparas"){
+             calculoDescuento = Precio * -0.25;
+             precioDescontado = calculoDescuento + Precio;
+    }
+
+    else if (cantidad == 4 && marcaLamparas != "ArgentinaLuz"){
+             calculoDescuento = Precio * -0.20;
+             precioDescontado = calculoDescuento + Precio;
+
+    }
+
+    else if (cantidad == 4 && marcaLamparas != "FelipeLamparas"){
+             calculoDescuento = Precio * -0.20;
+             precioDescontado = calculoDescuento + Precio;
+    }
+
+    else if (cantidad == 3 && marcaLamparas == "ArgentinaLuz"){
+             calculoDescuento = Precio * -0.15;
+             precioDescontado = calculoDescuento + Precio;
+    }
+
+    else if (cantidad == 3 && marcaLamparas == "FelipeLamparas"){
+             calculoDescuento = Precio * -0.10;
+             precioDescontado = calculoDescuento + Precio;
+    }
+
+    else if (cantidad == 3 && marcaLamparas != "ArgentinaLuz"){
+             calculoDescuento = Precio * -0.05;
+             precioDescontado = calculoDescuento + Precio;
+    }
+
+    else if (cantidad == 3 && marcaLamparas != "FelipeLamparas"){
+             calculoDescuento = Precio * -0,5;
+             precioDescontado = calculoDescuento + Precio;
+    }
+
+    
+        document.getElementById("txtIdprecioDescuento").value = precioDescontado;
+    
 }
