@@ -1,80 +1,65 @@
 function mostrar()
 {
-let estacionIngresada;
-let estadiaElejida;
-let precioFijo = 15000;
-let calculo;
-let aumento;
 
-    estacionIngresada = document.getElementById("txtIdEstacion").value;
-	estadiaElejida = document.getElementById("txtIdDestino").value;
+let destino;
+let estacion;
+const PRECIO = 15000;
+let aumento=0; 
+let descuento=0;
+let precioFinal;
 
-	
-    if (estacionIngresada == "Invierno"){
+destino = document.getElementById("txtIdDestino").value;
+estacion = document.getElementById("txtIdEstacion").value;
+
+switch(estacion){
+    case "Invierno":
+          if(destino == "Bariloche"){
+            aumento = 20;
+          }
+          else if(destino == "Mar del plata"){
+            descuento = 20;
+          }
+          else{
+            descuento = 10;
+          }
+          break;
+
+   
+    case "Verano":
+          if(destino == "Cataratas" || destino == "Cordoba"){
+             aumento = 10;
+          }
+          else if (destino == "Bariloche"){
+                   descuento = 20;
+
+          }
+          else{
+              aumento = 20;
+          }
+          break;
         
-        switch(estadiaElejida){
-        	   case("Bariloche"):
-        	   aumento = precioFijo * 0.20;
-        	   calculo = aumento + precioFijo;
-        	         alert("el total serian $"+ calculo);
-                     break;
-     
-           	    case("Cataratas"):
-           	    case("Cordoba"):
-           	          aumento = precioFijo * -0.10;
-           	          calculo = aumento + precioFijo;
-           	          alert ("en total es $"+ calculo);
-           	          break; 
-
-           	    default:
-           	          aumento = precioFijo * -0.20;
-           	          calculo = aumento + precioFijo;
-           	          alert("en total es $"+ calculo);
-           	          break;
-
-
-        }      
+    case "Otoño":
+    case "Primavera":
+          if(destino != "Cordoba"){
+             aumento = 10;
+          }
+          break;
     }
 
-    if (estacionIngresada == "Verano") {
-
-    	switch(estadiaElejida){
-    		   case("Bariloche"):
-    		        aumento = precioFijo * -0.20;
-    		        calculo = aumento + precioFijo;
-    		        alert("en total son $"+calculo);
-    		        break;
-
-    		    case("Cataratas"):
-    		    case("Cordoba"):
-    		          aumento = precioFijo * 0.10;
-    		          calculo = aumento + precioFijo;
-    		          alert("en total son $"+calculo);
-    		          break;
-
-    		    default:
-    		          aumento = precioFijo * 0.20;
-    		          calculo = aumento + precioFijo;
-    		          alert("en total son $"+calculo);
-    		          break;
-    	}
+    if(aumento != 0){
+        precioFinal = PRECIO + PRECIO * aumento/100;
+    }
+    else if(descuento != 0){
+        precioFinal = PRECIO - PRECIO * descuento/100;
     }
 
-    if (estacionIngresada == "Primavera" || estacionIngresada == "Otoño"){ 
-
-    	switch(estadiaElejida){
-    		   case("Bariloche"):
-    		   case("Cataratas"):
-    		   case("Mar del plata"):
-    		         aumento = precioFijo * 0.10;
-    		         calculo = aumento + precioFijo;
-    		         alert("en total serian $"+calculo);
-    		         break;
-
-    		   default:
-    		         alert("en total serian $"+precioFijo);
-
-    	}
+    else{
+        precioFinal = PRECIO;
     }
+
+    alert ("EL precio final es: " + precioFinal);
+
+              
+    
                 	   
 }
