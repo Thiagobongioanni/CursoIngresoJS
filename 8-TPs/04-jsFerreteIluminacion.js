@@ -18,7 +18,7 @@ function CalcularPrecio ()
  let precioDescuento;
  let precioImpuesto;
  let totalFinalImpuesto;
- let mensaje;
+ 
  
  
  
