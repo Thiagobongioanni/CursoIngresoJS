@@ -4,6 +4,25 @@ let destinoIngresado;
 let mensaje;
 
     destinoIngresado = document.getElementById("txtIdDestino").value;
+    
+    if (destinoIngresado == "Bariloche" || destinoIngresado == "Ushuaia"){
+        mensaje = "aca hace frio";
+    } 
+        
+    else{
+        mensaje = "aca hace calor"
+    }
+
+    alert(mensaje);
+}
+
+
+// ejercicio original
+
+/*let destinoIngresado;
+let mensaje;
+
+    destinoIngresado = document.getElementById("txtIdDestino").value;
 
     switch(destinoIngresado){
     	   case("Bariloche"):
@@ -17,6 +36,5 @@ let mensaje;
     	        break;
     }
 
-    alert(mensaje);
+    alert(mensaje);*/
 
-}

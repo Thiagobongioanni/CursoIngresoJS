@@ -1,6 +1,42 @@
 function mostrar()
 {
- let horario;
+let horaDelDia;
+let mensaje;
+
+    horaDelDia = parseInt(document.getElementById("txtIdHora").value);
+
+
+    if(horaDelDia <= 6){
+         mensaje = "es de noche"
+    }
+
+     else if (horaDelDia <= 11){
+        mensaje = "es de mañana";
+    }
+
+    else if(horaDelDia <= 19){
+         mensaje = ("es de tarde");
+    }
+
+
+    else if (horaDelDia <= 24){
+         mensaje = ("es de noche");
+    }
+
+    else{
+        mensaje = "la hora no existe";
+    }
+   
+    alert(mensaje);
+
+
+}
+
+
+
+
+// ejercicio original
+ /*let horario;
 
      horario = parseFloat(document.getElementById("txtIdHora").value);	
 
@@ -33,5 +69,4 @@ function mostrar()
 
      	    default:
      	           alert("la hora no existe.")
-     }
-}
+     }*/
