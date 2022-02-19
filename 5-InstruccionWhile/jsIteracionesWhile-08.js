@@ -3,22 +3,28 @@ Al presionar el botón pedir  números  hasta que el usuario quiera,
 sumar los que son positivos y multiplicar los negativos.*/
 function mostrar()
 {   
-	let numero;
-	let suma=0;
-	let multiplicacion;
-	let respuesta="s";
+let numeroIngresado;
+let sumaPositivo=0;
+let multiplicacionNegativo=1;
+let respuesta="s";
 
+	 while(respuesta == "s"){
+		  numeroIngresado = parseFloat(prompt("ingrese un numero"));
 
+		  while(isNaN(numeroIngresado) == true){
+		  	    parseFloat(prompt("error ingrese un numero"));
+		  }
 
+		  if(numeroIngresado >= 0){
+		  	sumaPositivo = sumaPositivo + numeroIngresado;
+		  }
 
-	while(respuesta == "s"){
-		  numero = parseInt(prompt("ingrese un numero"));
+		  else if(numeroIngresado < 0 ){
+		  	      multiplicacionNegativo = multiplicacionNegativo * numeroIngresado;
+		  }
+
 		  respuesta = prompt("quiere ingresar mas numeros? s/n ");
-
-		  suma = numero + suma;
-		  multiplicacion = numeroN * numero;
 	}
-parseInt(document.getElementById("txtIdSuma").value = suma);
-parseInt(document.getElementById("txtIdProducto").value = multiplicacion);
-
+    parseInt(document.getElementById("txtIdSuma").value = sumaPositivo);
+    parseInt(document.getElementById("txtIdProducto").value = multiplicacionNegativo);
 }

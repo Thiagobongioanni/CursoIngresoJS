@@ -19,20 +19,12 @@ function CalcularPrecio ()
  let precioImpuesto;
  let totalFinalImpuesto;
  
- 
- 
- 
-
 
     cantidad = parseInt(document.getElementById("txtIdCantidad").value);
     marcaLamparas = document.getElementById("Marca").value;
 
-         
-   // if (cantidad >=7 && marcaLamparas == "FelipeLamparas"){
-        //calculoDescuento = 5;
-    //}
 
-   if(cantidad >= 6 && marcaLamparas == "Osram"){
+   if(cantidad == 6 && marcaLamparas == "Osram"){
        calculoDescuento = -0.50;   
        }
 
@@ -77,25 +69,17 @@ function CalcularPrecio ()
     else if (cantidad == 3 && marcaLamparas != "FelipeLamparas"){
              calculoDescuento = -0,5;
     } 
-
-   
-    
-     if(calculoDescuento != 0){
+     
         precioDescuento = PRECIO + PRECIO * calculoDescuento;
         precioFinal = precioDescuento * cantidad;
         
-    }
      
-      if(precioFinal >= 120){   
+    if(precioFinal >= 120){   
             precioImpuesto =precioFinal * 0.10;
             totalFinalImpuesto = precioImpuesto + precioFinal;
             alert("IIBB Usted pago $"+totalFinalImpuesto);
    }
     
-    
-        
-
      document.getElementById("txtIdprecioDescuento").value = precioFinal;
-     
-    
+        
 }

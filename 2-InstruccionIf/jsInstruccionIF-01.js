@@ -4,15 +4,15 @@ Peso normal 18,5-24.9; Pre Obesidad 25-26.9; Obesidad I 27-29.9; Obesidad II 30-
 //thiago bongioanni ejercicio extra  en el if 1
 function mostrar()
 { 
-let edad;
+/*let edad;
 
     edad = parseInt(document.getElementById("txtIdEdad").value);
 
     if( edad == 15 ){ 
 
     alert("niña bonita");
-    }
-}
+    }*/
+
 
 
 
@@ -29,7 +29,7 @@ let edad;
 //extra
 
 
-/*let altura;
+let altura;
 let peso;
 let imc;
 let mensaje;
@@ -65,8 +65,8 @@ let mensaje;
            mensaje = "es obesidad III"
     }
 
-   alert(mensaje);*/
-
+   alert(mensaje);
+}
 
 /*let distancia;
 let tiempo;

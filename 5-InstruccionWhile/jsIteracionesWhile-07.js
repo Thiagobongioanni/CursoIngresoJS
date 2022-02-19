@@ -11,14 +11,14 @@ let acum=0;
 let promedio;
 let i=0;
 
-
+       
 
  while(respuesta == "s"){
      numero = parseInt(prompt("ingrese un numero"));
-     respuesta = prompt("ingresa otro? s/n");
      acum = acum + numero;
      i++;
      numerosIngresados = i;
+     respuesta = prompt("ingresa otro? s/n");
  }
 
 
