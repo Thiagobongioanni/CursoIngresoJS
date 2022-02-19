@@ -12,6 +12,10 @@ let respuesta;
     do{
        numeroIngresado = parseFloat(prompt("ingrese un numero"));
 
+       while(isNaN(numeroIngresado) == true){
+            numeroIngresado = parseFloat(prompt("error ingrese un numero"));
+       }
+
        if(bandera == 1 || numeroIngresado < minimo){
        	  minimo = numeroIngresado;
        }

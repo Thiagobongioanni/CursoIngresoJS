@@ -12,7 +12,7 @@ let respuesta="s";
 		  numeroIngresado = parseFloat(prompt("ingrese un numero"));
 
 		  while(isNaN(numeroIngresado) == true){
-		  	    parseFloat(prompt("error ingrese un numero"));
+		  	    numeroIngresado = parseFloat(prompt("error ingrese un numero"));
 		  }
 
 		  if(numeroIngresado >= 0){
