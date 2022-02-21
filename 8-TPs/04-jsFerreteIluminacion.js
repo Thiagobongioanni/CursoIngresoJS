@@ -87,9 +87,9 @@ function CalcularPrecio ()
 
 
 
-    //switch cantidad if marca
-let cantidad;
-let descuento;
+//switch cantidad if marca
+/*let cantidad;
+let descuento=0;
 let marcaLamparas;
 let precioFinal;
 let totalFinalImpuesto;
@@ -98,10 +98,9 @@ const PRECIO=35;
       cantidad = document.getElementById("txtIdCantidad").value
       marcaLamparas = document.getElementById("Marca").value
 
-      switch(cantidad){  
-             case "6":
+      switch(cantidad){
              default:
-                     descuento = 0.50;
+                    descuento = 0.50;                  
              break;
 
              case "5":
@@ -134,7 +133,15 @@ const PRECIO=35;
              else{
                   descuento = 0.05;
              }
-             break;            
+             break; 
+
+             case "2":
+             case "1":
+             if(marcaLamparas == "Osram" || marcaLamparas != "Osram"){
+                descuento = 0.00
+             }
+             break;
+                                
         }    
 
       precioFinal = PRECIO * cantidad;
@@ -147,71 +154,35 @@ const PRECIO=35;
          alert("IIBB Usted pago $"+totalFinalImpuesto);
       }
 
-      switch(cantidad){   
-             case "2":
-             if(marcaLamparas == "Osram" || marcaLamparas != "Osram"){
-                precioFinal = PRECIO + PRECIO;      
-             }
-             break;
-
-             case "1":
-             if(marcaLamparas == "Osram" || marcaLamparas != "Osram"){
-                precioFinal = PRECIO;     
-             }    
-             break; 
-        }   
-
       parseFloat(document.getElementById("txtIdprecioDescuento").value = precioFinal);
-}
+*/
 
 
-    /* solo switch
+    // solo switch
 let cantidad;
 let marcaLamparas;
-let descuento;
+let descuento=0;
 let precioFinal;
 let totalFinalImpuesto;
 const PRECIO=35;
     
-    cantidad = document.getElementById("txtIdCantidad").value;
+    cantidad = parseInt(document.getElementById("txtIdCantidad").value);
     marcaLamparas = document.getElementById("Marca").value;
 
     switch(cantidad){
-           case "6":     
-           switch(marcaLamparas){ 
-                  case "Osram":
-                  descuento = 0.50;
-                  break;
-            }
-    }
-
-    switch(cantidad){   
-           case "5":
-           switch(marcaLamparas){
-                  case "ArgentinaLuz":
-                  descuento = 0.40;
-                  break;
-
-                  default:
-                          descuento = 0.30;
-                  break;
-           }
-    }
-    switch(cantidad){  
-           case "4":
+           case (1):
+           case (2):
            switch(marcaLamparas){
                   case "ArgentinaLuz":
                   case "FelipeLamparas":
-                  descuento = 0.25;
-                  break;
-
-                  default:
-                  descuento = 0.20;
-                  break;
+                  case "JeLuz":
+                  case "HazIluminacion":
+                  case "Osram":
+                  descuento = 0.00;
            }
-    }
-    switch(cantidad){
-           case "3":
+           break;
+
+           case(3):
            switch(marcaLamparas){
                   case "ArgentinaLuz":
                   descuento = 0.15;
@@ -221,31 +192,66 @@ const PRECIO=35;
                   descuento = 0.10;
                   break;
 
-                  default:
+                  case "JeLuz":
+                  case "HazIluminacion":
+                  case "Osram":
                   descuento = 0.05;
-                  break;
+                  break
            }
-    }
+           break;
+
+           case (4):
+           switch(marcaLamparas){
+                   case "ArgentinaLuz":
+                   case "FelipeLamparas":
+                   descuento = 0.25;
+                   break;
+            
+                   case "JeLuz":
+                   case "HazIluminacion":
+                   case "Osram":
+                   descuento = 0.20;
+                   break;
+           }
+           break;     
+
+           case (5):
+           switch(marcaLamparas){
+                  case "ArgentinaLuz":
+                  descuento = 0.40;
+                  break;
+
+                  case "FelipeLamparas":
+                  case "JeLuz":
+                  case "HazIluminacion":
+                  case "Osram":
+                  descuento = 0.30;
+                  break;
+            }
+            break;
+
+            default:
+                    descuento = 0.50;
+                    break;
+           
+    } 
 
     precioFinal = PRECIO * cantidad;
     descuento = precioFinal * descuento;
-    precioFinal = precioFinal - descuento;
+    precioFinal = precioFinal - descuento;    
+    
+    switch(precioFinal){
+           
 
-    switch(precioFinal){  
-           case 120:
-           case 121:
-           case 122:
-           case 122.5:
-           case 123:  
+           
            totalFinalImpuesto = precioFinal * 0.10;
            totalFinalImpuesto = totalFinalImpuesto + precioFinal;
            alert("IIBB Usted pago $"+totalFinalImpuesto);
            break;
      }
 
-    parseFloat(document.getElementById("txtIdprecioDescuento").value = precioFinal);*/
-
-
+   parseFloat(document.getElementById("txtIdprecioDescuento").value = precioFinal); 
+}
 //if cantidad switch marca
 /*
 let cantidad;
