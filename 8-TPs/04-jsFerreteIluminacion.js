@@ -157,7 +157,7 @@ const PRECIO=35;
       parseFloat(document.getElementById("txtIdprecioDescuento").value = precioFinal);
 */
 
-
+/*
     // solo switch
 let cantidad;
 let marcaLamparas;
@@ -202,16 +202,16 @@ const PRECIO=35;
 
            case (4):
            switch(marcaLamparas){
-                   case "ArgentinaLuz":
-                   case "FelipeLamparas":
-                   descuento = 0.25;
-                   break;
+                  case "ArgentinaLuz":
+                  case "FelipeLamparas":
+                  descuento = 0.25;
+                  break;
             
-                   case "JeLuz":
-                   case "HazIluminacion":
-                   case "Osram":
-                   descuento = 0.20;
-                   break;
+                  case "JeLuz":
+                  case "HazIluminacion":
+                  case "Osram":
+                  descuento = 0.20;
+                  break;
            }
            break;     
 
@@ -241,28 +241,34 @@ const PRECIO=35;
     precioFinal = precioFinal - descuento;    
     
     switch(precioFinal){
-           
 
-           
+//no se me ocurre otra manera ya que si declaro un default me hace el calculo siempre
+           case 120:
+           case 121:
+           case 122:
+           case 122.5:
+           case 140:
+           case 157.5:
+           case 175:
+
            totalFinalImpuesto = precioFinal * 0.10;
            totalFinalImpuesto = totalFinalImpuesto + precioFinal;
            alert("IIBB Usted pago $"+totalFinalImpuesto);
            break;
      }
 
-   parseFloat(document.getElementById("txtIdprecioDescuento").value = precioFinal); 
-}
-//if cantidad switch marca
-/*
+   parseFloat(document.getElementById("txtIdprecioDescuento").value = precioFinal); */
+
+
+// if cantidad switch marca
+
 let cantidad;
 let marcaLamparas;
-let descuento;
-let precioTotal;
+let descuento=0;
 let precioFinal;
-let precioDescuento;
 const PRECIO=35;
 let totalFinalImpuesto;
-let precioImpuesto;
+
  
     cantidad = parseInt(document.getElementById("txtIdCantidad").value);
     marcaLamparas = document.getElementById("Marca").value;
@@ -270,6 +276,10 @@ let precioImpuesto;
     if(cantidad >= 6){
        switch(marcaLamparas){
               case "Osram":
+              case "FelipeLamparas":
+              case "JeLuz":
+              case "HazIluminacion":
+              case "ArgentinaLuz":
               descuento = 0.50;
               break;
        }
@@ -315,16 +325,15 @@ let precioImpuesto;
             }
     }
     
-  precioTotal = PRECIO * cantidad;
-  precioDescuento = precioTotal * descuento;
-  precioFinal = precioTotal - precioDescuento;
+ precioFinal = PRECIO * cantidad;
+  descuento = precioFinal * descuento;
+  precioFinal = precioFinal - descuento;
 
     if(precioFinal >= 120){   
-       precioImpuesto = precioFinal * 0.10;
-       totalFinalImpuesto = precioImpuesto + precioFinal;
+       totalFinalImpuesto = precioFinal * 0.10;
+       totalFinalImpuesto = totalFinalImpuesto + precioFinal;
        alert("IIBB Usted pago $"+totalFinalImpuesto);
    }
 
  parseFloat(document.getElementById("txtIdprecioDescuento").value = precioFinal);
-
-*/
+}
