@@ -2,22 +2,24 @@ function mostrar()
 {
  let numeroIngresado;
  let i;
- let bandera=true;
+ let contador=0;
+ let mensaje;
 
     
     numeroIngresado = parseInt(prompt("ingrese un numero"));
 
-    for(i=2; i<numeroIngresado; i++){
+    for(i=1; i<=numeroIngresado; i++){
+
     	if (numeroIngresado % i == 0){
-    		bandera = false;
+         contador++;
     	}
     }
     
-    if(bandera == true){
+    if(contador == 2){
        mensaje = "es primo";
     }
      
-    if(bandera == false){
+    else{
        mensaje = "no es primo";
     }
     alert(mensaje);
