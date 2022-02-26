@@ -149,8 +149,25 @@ let respuesta="s";
 
 {
 let ingresoMascota;
+let razaP;
+let razaG
+let Pajaro;
+let otros;
 let i;
 
     for(i=0;i<10;i++)
-    ingresoMascota = prompt("ingrese su mascota");
+        ingresoMascota = prompt("ingrese su mascota");
+        while(ingresoMascota != "gato" && ingresoMascota !="perro" && ingresoMascota != "pájaro" && ingresoMascota != "otros"){
+        	  ingresoMascota = prompt("ingrese una mascota valida");
+        }
+        razaP = prompt("ingrese la raza del perro");
+        while(razaP != "pastor" && razaP != "toy" && razaP != "callejero"){
+        	  razaP = prompt("ingrese una raza valida");
+        }
+        
+        razaG = prompt("ingrese la raza del gato");
+        while(razaG != "siames" && razaG != "turco" && razaG != "peterbald" && razaG != "generico"){
+        	  razaG = prompt("ingrese una raza valida");
+        }                      	      
+
 }
