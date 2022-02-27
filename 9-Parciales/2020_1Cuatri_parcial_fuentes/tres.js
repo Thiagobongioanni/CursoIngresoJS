@@ -1,5 +1,5 @@
 function mostrar()
-{
+/*{//terminado
 let nombreIngresado;
 let edadIngresada;
 let sexoIngresado;
@@ -18,6 +18,9 @@ let promedio;
 
     while(respuesta == "s"){  
     	  nombreIngresado = prompt("ingrese su nombre");
+          while(isNaN(nombreIngresado)==false){
+                nombreIngresado = prompt("ingrese un nombre valido");
+          }
 
     	 edadIngresada = parseInt(prompt("ingrese su edad"));
 	     while(isNaN(edadIngresada)== true){
@@ -36,7 +39,7 @@ let promedio;
 
          temperaturaCorporal = parseFloat(prompt("ingrese su temperatura"));
          while(temperaturaCorporal >= "45" || temperaturaCorporal <= "20"){
-         	   temperaturaCorporal = parseFloat(prompt("ingrese una temperatura valida"));
+         	   temperaturaCorporal = parseFloat(prompt("ingrese una temperatura valida entre 20 y 45"));
          }
 
         respuesta = prompt("quiere ingresar mas datos? s/n");
@@ -73,21 +76,31 @@ let promedio;
      alert("la cantidad de hombres que hay solteros o viudos es de: "+contadorSolterosViudos);
      alert("la cantidad de personas mayores con mas de 38° de temperatura es de: "+contadorMayores);
      alert("el promedio de edad entre los hombres solteros es de: "+promedio);
-}
+}*/
 
-/*terminarlo{
+{
 let	nombreAlumno;
 let carrera;
 let estadoCarrera;
 let sexoIngresado;
 let edad;
 let nota;
-let contAlumnosP;
-let contAlumnosPsi;
-let contMujeresEnP;
-let contNoBinario;
+let contAlumnosP=0;
+let contAlumnosPsi=0;
+let contDG=0;
+let contMujeresEnP=0;
+let contNoBinario=0;
 let notasFinalizantes;
+let acumNotas=0;
 let respuesta="s";
+let nombreDelMasViejoPsi;
+let generoDelMasViejoPsi;
+let edadDelMasViejoPsi;
+let bandera=true;
+let nombreMejorNotaPsiNb;
+let mejorNotaPsiNb;
+let estadoCarreraNbPsi;
+let contNotasFinalizantes=0;
 
 
     while(respuesta == "s"){
@@ -108,45 +121,66 @@ let respuesta="s";
          	   sexoIngresado = prompt("ingrese un sexo valido");
          }
 
-         edad = prompt("ingrese su edad");
+         edad = parseInt(prompt("ingrese su edad"));
          while(isNaN(edad)==true){
          	   edad = prompt("ingrese una edad valida");
          }
 
-         nota = prompt("ingrese su nota");
+         nota = parseInt(prompt("ingrese su nota"));
          while(isNaN(nota)==true && nota < 0 && nota >10){
          	   nota = prompt("ingrese una nota valida");
          }
 
          switch(carrera){
          	    case "programacion":
-         	          contAlumnosP++
+         	          contAlumnosP++;
          	          if(sexoIngresado == "femenino"){
          	          	 contMujeresEnP++
          	          }
          	          break;
 
          	    case "psicologia":
-         	          contAlumnosPsi:
+         	          contAlumnosPsi++;
          	          break;
 
          	    case "diseño grafico":
-         	          contDG++
+         	          contDG++;
          	          break;
 
          	    if(sexoIngresado == "nobinario"){
          	       contNoBinario++;
                 }
 
-                if(){
-                  notasFinalizantes++
+                if(estadoCarrera == "finalizado"){
+                   acumNotas = acumNotas + nota;
+                   contNotasFinalizantes++;
+                }
+                if(edadDelMasViejoPsi < edad || bandera == true){
+                   edadDelMasViejoPsi = edad;
+                   nombreDelMasViejoPsi = nombreAlumno;
+                   generoDelMasViejoPsi = sexoIngresado;
+                   bandera=false
+                }
+
+                if(sexoIngresado == "nobinario" && nota > mejorNotaPsiNb){
+                   nombreMejorNotaPsiNb = nombreAlumno;
+                   mejorNotaPsiNb = nota;
+                   estadoCarreraNbPsi = estadoCarrera;
                 }
           }
 
          respuesta = prompt("quiere ingresar mas datos? s/n");
-    }       
+    } 
+ 
+   document.write("la cantidad de alumnos de programacion es de: "+contAlumnosP+" de psicologia son: "+contAlumnosPsi+" y en diseño grafico son: "+contDG+ "<br>");
+   document.write()
+   document.write()
+   document.write()
+   document.write()
+   document.write()
+   document.write()
 
-}*/
+}
 
 /*{
 let ingresoMascota;
