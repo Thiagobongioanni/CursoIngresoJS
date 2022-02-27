@@ -1,5 +1,5 @@
 function mostrar()
-/*{//terminado
+/*{//terminado original
 let nombreIngresado;
 let edadIngresada;
 let sexoIngresado;
@@ -78,7 +78,9 @@ let promedio;
      alert("el promedio de edad entre los hombres solteros es de: "+promedio);
 }*/
 
-{
+
+//terminado simil 2
+/*{
 let	nombreAlumno;
 let carrera;
 let estadoCarrera;
@@ -90,99 +92,119 @@ let contAlumnosPsi=0;
 let contDG=0;
 let contMujeresEnP=0;
 let contNoBinario=0;
-let notasFinalizantes;
 let acumNotas=0;
 let respuesta="s";
 let nombreDelMasViejoPsi;
 let generoDelMasViejoPsi;
 let edadDelMasViejoPsi;
 let bandera=true;
+let bandera2=true;
 let nombreMejorNotaPsiNb;
 let mejorNotaPsiNb;
 let estadoCarreraNbPsi;
 let contNotasFinalizantes=0;
+let promedioNotasFinalizantes;
+let mensaje;
 
 
     while(respuesta == "s"){
-    	 nombreAlumno = prompt("ingrese su nombre");
-
-    	 carrera = prompt("ingrese la carrera");
-         while(carrera != "programacion" && carrera != "psicologia"  && carrera != "diseño grafico"){
-         	   carrera = prompt("ingrese una carrera valida");
-         }
-
-         estadoCarrera = prompt("ingrese el estado de su carrera");
-         while(estadoCarrera != "en curso" && estadoCarrera != "abandono" && estadoCarrera != "finalizado"){
-               estadoCarrera = prompt("ingrese un estado de carrera valido");
-         }
-
-         sexoIngresado = prompt("ingrese su sexo");
-         while(sexoIngresado != "masculino" && sexoIngresado != "femenino" && sexoIngresado != "nobinario"){
-         	   sexoIngresado = prompt("ingrese un sexo valido");
-         }
-
-         edad = parseInt(prompt("ingrese su edad"));
-         while(isNaN(edad)==true){
-         	   edad = prompt("ingrese una edad valida");
-         }
-
-         nota = parseInt(prompt("ingrese su nota"));
-         while(isNaN(nota)==true && nota < 0 && nota >10){
-         	   nota = prompt("ingrese una nota valida");
-         }
-
-         switch(carrera){
-         	    case "programacion":
-         	          contAlumnosP++;
-         	          if(sexoIngresado == "femenino"){
-         	          	 contMujeresEnP++
-         	          }
-         	          break;
-
-         	    case "psicologia":
-         	          contAlumnosPsi++;
-         	          break;
-
-         	    case "diseño grafico":
-         	          contDG++;
-         	          break;
-
-         	    if(sexoIngresado == "nobinario"){
-         	       contNoBinario++;
-                }
-
-                if(estadoCarrera == "finalizado"){
-                   acumNotas = acumNotas + nota;
-                   contNotasFinalizantes++;
-                }
-                if(edadDelMasViejoPsi < edad || bandera == true){
-                   edadDelMasViejoPsi = edad;
-                   nombreDelMasViejoPsi = nombreAlumno;
-                   generoDelMasViejoPsi = sexoIngresado;
-                   bandera=false
-                }
-
-                if(sexoIngresado == "nobinario" && nota > mejorNotaPsiNb){
-                   nombreMejorNotaPsiNb = nombreAlumno;
-                   mejorNotaPsiNb = nota;
-                   estadoCarreraNbPsi = estadoCarrera;
-                }
+    	  nombreAlumno = prompt("ingrese su nombre");
+          while(isNaN(nombreAlumno)==false){
+                nombreAlumno = prompt("ingrese un nombre valido");
           }
 
-         respuesta = prompt("quiere ingresar mas datos? s/n");
+    	  carrera = prompt("ingrese la carrera");
+          while(carrera != "programacion" && carrera != "psicologia"  && carrera != "diseño grafico"){
+         	    carrera = prompt("ingrese una carrera valida");
+          }
+
+          estadoCarrera = prompt("ingrese el estado de su carrera");
+          while(estadoCarrera != "en curso" && estadoCarrera != "abandono" && estadoCarrera != "finalizado"){
+                estadoCarrera = prompt("ingrese un estado de carrera valido");
+          }
+
+          sexoIngresado = prompt("ingrese su sexo");
+          while(sexoIngresado != "masculino" && sexoIngresado != "femenino" && sexoIngresado != "nobinario"){
+         	    sexoIngresado = prompt("ingrese un sexo valido");
+          }
+
+          edad = parseInt(prompt("ingrese su edad"));
+          while(isNaN(edad)==true){
+         	    edad = parseInt(prompt("ingrese una edad valida"));
+          }
+
+          nota = parseInt(prompt("ingrese su nota"));
+          while(isNaN(nota)==true || nota > 10 || nota < 0){  
+         	    nota = parseInt(prompt("ingrese una nota valida"));     
+          }
+
+          switch(carrera){
+         	     case "programacion":
+         	           contAlumnosP++;
+         	           if(sexoIngresado == "femenino"){
+         	              contMujeresEnP++;
+         	           }
+         	           break;
+
+         	     case "psicologia":
+         	           contAlumnosPsi++;
+                      
+                       if(bandera == true || edadDelMasViejoPsi < edad ){
+                          edadDelMasViejoPsi = edad;
+                          nombreDelMasViejoPsi = nombreAlumno;
+                          generoDelMasViejoPsi = sexoIngresado;
+                          bandera=false;
+                       }
+
+                       if(bandera2 == true || sexoIngresado == "nobinario" && nota > mejorNotaPsiNb){
+                          nombreMejorNotaPsiNb = nombreAlumno;
+                          mejorNotaPsiNb = nota;
+                          estadoCarreraNbPsi = estadoCarrera;
+                          bandera2=false;
+                       }
+         	           break;
+
+         	     case "diseño grafico":
+         	           contDG++;
+         	           break;
+          }
+
+          if(sexoIngresado == "nobinario"){
+             contNoBinario++;
+          }
+
+          if(estadoCarrera == "finalizado"){
+             acumNotas = acumNotas + nota;
+             contNotasFinalizantes++;
+          }
+
+          if(contAlumnosPsi > contDG && contAlumnosPsi > contAlumnosP){
+             mensaje = "la carrera con mas alumnos es psicologia";
+          }
+
+          if(contAlumnosP > contDG && contAlumnosP > contAlumnosPsi){
+             mensaje = "la carrera con mas alumnos es programacion";
+          }
+
+          if(contDG > contAlumnosP && contDG > contAlumnosPsi){
+             mensaje = "la carrera con mas alumnos es diseño grafico";
+          }
+
+          respuesta = prompt("quiere ingresar mas datos? s/n");
     } 
+
+    promedioNotasFinalizantes = acumNotas / contNotasFinalizantes;
  
-   document.write("la cantidad de alumnos de programacion es de: "+contAlumnosP+" de psicologia son: "+contAlumnosPsi+" y en diseño grafico son: "+contDG+ "<br>");
-   document.write()
-   document.write()
-   document.write()
-   document.write()
-   document.write()
-   document.write()
+    document.write("la cantidad de alumnos de programacion es de: "+contAlumnosP+" de psicologia son: "+contAlumnosPsi+" y en diseño grafico son: "+contDG+ "<br>");
+    document.write("la cantidad de mujeres cursando la carrera de programacion es de : "+contMujeresEnP+"<br>");
+    document.write("la cantidad de alumnos no binarios es de: "+contNoBinario+"<br>");
+    document.write("el promedio de las notas de los alumnos finalizantes es de: "+promedioNotasFinalizantes+"<br>");
+    document.write("el nombre del alumno mas viejo en psicologia es: "+nombreDelMasViejoPsi+" su edad es: "+edadDelMasViejoPsi+" y su genero es:"+generoDelMasViejoPsi+"<br>");
+    document.write("el nombre del mejor alumno no binario en psicologia es: "+nombreMejorNotaPsiNb+" su nota es de: "+mejorNotaPsiNb+" el estado de su carrera es: "+estadoCarreraNbPsi+"<br>");
+    document.write(mensaje);
+}*/
 
-}
-
-/*{
+{
 let ingresoMascota;
 let razaP;
 let razaG
@@ -205,4 +227,4 @@ let i;
         	  razaG = prompt("ingrese una raza valida");
         }                      	      
 
-}*/
+}
