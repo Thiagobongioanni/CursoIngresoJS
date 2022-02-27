@@ -1,5 +1,5 @@
 function mostrar()
-/*{
+{
 let nombreIngresado;
 let edadIngresada;
 let sexoIngresado;
@@ -9,17 +9,19 @@ let respuesta="s";
 let bandera=1;
 let mayorTemp;
 let nombreMayTemp;
-let contadorSolterosViudos;
-let contadorMayores;
-let contadorHombresSolteros;
-let acumEdad;
+let contadorViudos=0;
+let contadorSolterosViudos=0;
+let contadorMayores=0;
+let contadorHombresSolteros=0;
+let acumEdad=0;
+let promedio;
 
     while(respuesta == "s"){  
     	  nombreIngresado = prompt("ingrese su nombre");
 
-    	 edadIngresada = prompt("ingrese su edad");
+    	 edadIngresada = parseInt(prompt("ingrese su edad"));
 	     while(isNaN(edadIngresada)== true){
-	           edadIngresada = prompt("ingrese una edad valida");
+	           edadIngresada = parseFloat(prompt("ingrese una edad valida"));
 	     }
 
 	     sexoIngresado = prompt("ingrese su sexo/genero");
@@ -32,9 +34,9 @@ let acumEdad;
 	           estadoCivil = prompt("ingrese un estado civil valido entre: soltero/viudo/casado");
          }
 
-         temperaturaCorporal = prompt("ingrese su temperatura");
+         temperaturaCorporal = parseFloat(prompt("ingrese su temperatura"));
          while(temperaturaCorporal >= "45" || temperaturaCorporal <= "20"){
-         	   temperaturaCorporal = prompt("ingrese una temperatura valida");
+         	   temperaturaCorporal = parseFloat(prompt("ingrese una temperatura valida"));
          }
 
         respuesta = prompt("quiere ingresar mas datos? s/n");
@@ -45,34 +47,33 @@ let acumEdad;
            bandera = 0;
         }
 
-        if(estadoCivil == "viudo" && edadIngresada > 18){
-           contadorViudos++
+        if(estadoCivil == "viudo" && edadIngresada >= 18){
+           contadorViudos++;
         }
 
         if(sexoIngresado == "m" && estadoCivil != "casado"){
-           contadorSolterosViudos++
+           contadorSolterosViudos++;
         } 
 
         if(edadIngresada > 60 && temperaturaCorporal > 38){
            contadorMayores++;
         }
 
-        if(estadoCivil == "soltero" && sexoIngresado == "m"){
-           acumEdad=acumEdad + edadIngresada
+        if(sexoIngresado == "m" && estadoCivil == "soltero"){
+           acumEdad = acumEdad + edadIngresada;
            contadorHombresSolteros++;
-
         }
 
     }
-
+     
      promedio = acumEdad / contadorHombresSolteros; 
      
-     alert(""+nombreMayTemp);
-     alert(""+contadorViudos);
-     alert(""+contadorSolterosViudos);
-     alert(""+contadorMayores);
-     alert(""+promedio);
-}*/
+     alert("el nombre de la persona con mas temperatura es: "+nombreMayTemp);
+     alert("la cantidad de mayores de edad viudos es de: "+contadorViudos);
+     alert("la cantidad de hombres que hay solteros o viudos es de: "+contadorSolterosViudos);
+     alert("la cantidad de personas mayores con mas de 38° de temperatura es de: "+contadorMayores);
+     alert("el promedio de edad entre los hombres solteros es de: "+promedio);
+}
 
 /*terminarlo{
 let	nombreAlumno;
@@ -147,7 +148,7 @@ let respuesta="s";
 
 }*/
 
-{
+/*{
 let ingresoMascota;
 let razaP;
 let razaG
@@ -170,4 +171,4 @@ let i;
         	  razaG = prompt("ingrese una raza valida");
         }                      	      
 
-}
+}*/
