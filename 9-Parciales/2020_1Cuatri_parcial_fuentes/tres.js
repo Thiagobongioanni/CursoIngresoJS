@@ -205,26 +205,57 @@ let mensaje;
 }*/
 
 {
-let ingresoMascota;
-let razaP;
-let razaG
-let Pajaro;
-let otros;
-let i;
+ let ingresoMascota;
+ let razaPerros;
+ let edadPerro;
+ let razaGatos;
+ let edadGato;
+ let edadOtros;
+ let edadPajaro;
+ let i;
 
-    for(i=0;i<10;i++)
-        ingresoMascota = prompt("ingrese su mascota");
-        while(ingresoMascota != "gato" && ingresoMascota !="perro" && ingresoMascota != "pájaro" && ingresoMascota != "otros"){
-        	  ingresoMascota = prompt("ingrese una mascota valida");
-        }
-        razaP = prompt("ingrese la raza del perro");
-        while(razaP != "pastor" && razaP != "toy" && razaP != "callejero"){
-        	  razaP = prompt("ingrese una raza valida");
-        }
-        
-        razaG = prompt("ingrese la raza del gato");
-        while(razaG != "siames" && razaG != "turco" && razaG != "peterbald" && razaG != "generico"){
-        	  razaG = prompt("ingrese una raza valida");
-        }                      	      
+     for(i=0;i<4;i++){      
+         ingresoMascota = prompt("ingrese su mascota");
+         while(ingresoMascota != "gato" && ingresoMascota !="perro" && ingresoMascota != "pájaro" && ingresoMascota != "otros"){
+        	   ingresoMascota = prompt("ingrese una mascota valida");
+         }
 
+         if(ingresoMascota == "perro"){  
+            razaPerro = prompt("ingrese la raza del perro");
+            while(razaPerro != "pastor" && razaPerro != "toy" && razaPerro != "callejero"){
+        	      razaPerro = prompt("ingrese una raza valida");
+            } 
+            edadPerro == prompt("ingrese la edad");
+            while(edadPerro < 1 || edadPerro > 20){
+               edadPerro == prompt("ingrese una edad valida");
+            }
+         } 
+
+         if(ingresoMascota == "gato"){
+            razaGatos = prompt("ingrese la raza del gato")
+            while(razaGatos != "siames" && razaGatos != "turco" && razaGatos != "peterbald" && razaGatos != generico){
+                  razaGatos = prompt("ingrese una raza de gato valida");
+            }
+            edadGato = parseInt(prompt("ingrese la edad del gato"));
+            if(edadGato < 1 || edadGato > 20){
+               edadGato = parseInt(prompt("ingrese una edad valida"));
+            }
+         }    
+
+         if(ingresoMascota == "otros"){
+            prompt("ingrese un texto");
+            edadOtros = parseInt(prompt("ingrese la edad"))
+            if(edadOtros < 1 || edadOtros > 100){
+               parseInt(prompt("ingrese una edad valida"));
+            }
+         } 
+
+         if(ingresoMascota == "pajaro"){
+            prompt("ingrese un texto");
+            edadPajaro = parseInt(prompt("ingrese la edad"))
+            if(edadPajaro < 1 || edadPajaro > 50){
+               parseInt(prompt("ingrese una edad valida"));
+            }
+         }            	      
+     }
 }
