@@ -206,18 +206,40 @@ let mensaje;
 
 {
  let ingresoMascota;
+ let nombreMascota;
  let razaPerros;
  let edadPerro;
  let razaGatos;
  let edadGato;
  let edadOtros;
  let edadPajaro;
+ let perroMasViejo;
+ let gatoMasViejo;
+ let pajaroMasViejo;
+ let otrosMasViejo;
+ let nombreMasViejoPerro;
+ let nombreMasViejoPajaro;
+ let nombreMasViejoOtros;
+ let nombreMasViejoGato;
  let i;
+ let banderaP=true;
+ let banderaG=true;
+ let banderaPajaro=true;
+ let banderaOtros=true;
+ let mensaje;
+ let mensaje2;
+ let mensaje3;
+ let mensaje4;
 
      for(i=0;i<4;i++){      
          ingresoMascota = prompt("ingrese su mascota");
-         while(ingresoMascota != "gato" && ingresoMascota !="perro" && ingresoMascota != "pájaro" && ingresoMascota != "otros"){
+         while(ingresoMascota != "gato" && ingresoMascota !="perro" && ingresoMascota != "pajaro" && ingresoMascota != "otros"){
         	   ingresoMascota = prompt("ingrese una mascota valida");
+         }
+
+         nombreMascota = prompt("ingrese el nombre de su mascota");
+         while(isNaN(nombreMascota)==false){
+               nombreMascota = prompt("ingrese un nombre valido");
          }
 
          if(ingresoMascota == "perro"){  
@@ -256,6 +278,39 @@ let mensaje;
             if(edadPajaro < 1 || edadPajaro > 50){
                parseInt(prompt("ingrese una edad valida"));
             }
-         }            	      
+         }  
      }
+    
+         if(banderaP == true || perroMasViejo < edadPerro){
+            perroMasViejo = edadPerro;
+            nombreMasViejoPerro = nombreMascota;
+            mensaje = "el nombre del perro mas viejo es "+nombreMasViejoPerro;
+            banderaP=false;
+         }
+
+         if(banderaG == true || gatoMasViejo < edadGato){
+            gatoMasViejo = edadGato;
+            nombreMasViejoGato = nombreMascota;
+            mensaje2 = "el nombre del gato mas viejo es "+nombreMasViejoGato;
+            banderaG=false;
+         }
+
+         if(banderaPajaro == true || pajaroMasViejo < edadPajaro){
+            pajaroMasViejo = edadPajaro;
+            nombreMasViejoPajaro = nombreMascota;
+            mensaje3 = "el nombre del pajaro mas viejo es "+nombreMasViejoPajaro;
+            banderaPajaro=false;
+         }
+
+         if(banderaOtros == true || otrosMasViejo < edadOtros){
+            otrosMasViejo = edadOtros;
+            nombreMasViejoOtros = nombreMascota;
+            mensaje4 = "el nombre del mas viejo de otros es "+nombreMasViejoOtros;
+            banderaOtros=false;
+         }
+
+    alert(mensaje);
+    alert(mensaje2);
+    alert(mensaje3);
+    alert(mensaje4);
 }
