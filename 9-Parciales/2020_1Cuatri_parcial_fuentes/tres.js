@@ -208,30 +208,30 @@ let mensaje;
  let ingresoMascota;
  let nombreMascota;
  let razaPerros;
- let edadPerro;
- let razaGatos;
- let edadGato;
- let edadOtros;
- let edadPajaro;
- let perroMasViejo;
- let gatoMasViejo;
- let pajaroMasViejo;
- let otrosMasViejo;
+ let edad;
+ let acumPerroMasViejo=0;
+ let acumGatoMasViejo=0;
+ let acumPajaroMasViejo=0;
+ let acumOtrosMasViejos=0;
  let nombreMasViejoPerro;
  let nombreMasViejoPajaro;
  let nombreMasViejoOtros;
  let nombreMasViejoGato;
+ let contSiames;
+ let contTurco;
+ let contPeterbald;
+ let contGenerico;
+ let acumPromedioS=0;
+ let promedioSiames;
  let i;
- let banderaP=true;
- let banderaG=true;
- let banderaPajaro=true;
- let banderaOtros=true;
  let mensaje;
  let mensaje2;
  let mensaje3;
  let mensaje4;
+ let mensaje5;
 
-     for(i=0;i<4;i++){      
+
+     for(i=0;i<2;i++){      
          ingresoMascota = prompt("ingrese su mascota");
          while(ingresoMascota != "gato" && ingresoMascota !="perro" && ingresoMascota != "pajaro" && ingresoMascota != "otros"){
         	   ingresoMascota = prompt("ingrese una mascota valida");
@@ -247,70 +247,106 @@ let mensaje;
             while(razaPerro != "pastor" && razaPerro != "toy" && razaPerro != "callejero"){
         	      razaPerro = prompt("ingrese una raza valida");
             } 
-            edadPerro == prompt("ingrese la edad");
-            while(edadPerro < 1 || edadPerro > 20){
-               edadPerro == prompt("ingrese una edad valida");
+            edad == prompt("ingrese la edad");
+            while(edad < 1 || edad > 20){
+               edad == prompt("ingrese una edad valida");
             }
          } 
 
          if(ingresoMascota == "gato"){
             razaGatos = prompt("ingrese la raza del gato")
-            while(razaGatos != "siames" && razaGatos != "turco" && razaGatos != "peterbald" && razaGatos != generico){
+            while(razaGatos != "siames" && razaGatos != "turco" && razaGatos != "peterbald" && razaGatos != "generico"){
                   razaGatos = prompt("ingrese una raza de gato valida");
             }
-            edadGato = parseInt(prompt("ingrese la edad del gato"));
-            if(edadGato < 1 || edadGato > 20){
-               edadGato = parseInt(prompt("ingrese una edad valida"));
+            edad = parseInt(prompt("ingrese la edad del gato"));
+            while(edad < 1 || edad > 20){
+               edad = parseInt(prompt("ingrese una edad valida"));
             }
          }    
 
          if(ingresoMascota == "otros"){
-            prompt("ingrese un texto");
-            edadOtros = parseInt(prompt("ingrese la edad"))
-            if(edadOtros < 1 || edadOtros > 100){
+            edad = parseInt(prompt("ingrese la edad"))
+            while(edad < 1 || edad > 100){
                parseInt(prompt("ingrese una edad valida"));
             }
          } 
 
          if(ingresoMascota == "pajaro"){
-            prompt("ingrese un texto");
-            edadPajaro = parseInt(prompt("ingrese la edad"))
-            if(edadPajaro < 1 || edadPajaro > 50){
+            edad = parseInt(prompt("ingrese la edad"))
+            while(edad < 1 || edad > 50){
                parseInt(prompt("ingrese una edad valida"));
             }
          }  
-     }
-    
-         if(banderaP == true || perroMasViejo < edadPerro){
-            perroMasViejo = edadPerro;
+
+         if(ingresoMascota == "perro" && acumPerroMasViejo < edad){
+            acumPerroMasViejo = acumPerroMasViejo + edad;
             nombreMasViejoPerro = nombreMascota;
             mensaje = "el nombre del perro mas viejo es "+nombreMasViejoPerro;
-            banderaP=false;
          }
 
-         if(banderaG == true || gatoMasViejo < edadGato){
-            gatoMasViejo = edadGato;
+          if(ingresoMascota == "gato" && acumGatoMasViejo < edad){
+            acumGatoMasViejo = acumGatoMasViejo + edad;
             nombreMasViejoGato = nombreMascota;
             mensaje2 = "el nombre del gato mas viejo es "+nombreMasViejoGato;
-            banderaG=false;
          }
 
-         if(banderaPajaro == true || pajaroMasViejo < edadPajaro){
-            pajaroMasViejo = edadPajaro;
+         if(ingresoMascota == "pajaro" && acumPajaroMasViejo < edad){
+            acumPajaroMasViejo = acumPajaroMasViejo + edad;
             nombreMasViejoPajaro = nombreMascota;
             mensaje3 = "el nombre del pajaro mas viejo es "+nombreMasViejoPajaro;
-            banderaPajaro=false;
          }
 
-         if(banderaOtros == true || otrosMasViejo < edadOtros){
-            otrosMasViejo = edadOtros;
+         if(ingresoMascota == "otros" && acumOtrosMasViejos < edad){
+            acumOtrosMasViejos = acumOtrosMasViejos + edad;
             nombreMasViejoOtros = nombreMascota;
-            mensaje4 = "el nombre del mas viejo de otros es "+nombreMasViejoOtros;
-            banderaOtros=false;
+            mensaje4 = "el nombre del mas viejo de otros es "+nombreMasViejoOtros;          
          }
 
-    alert(mensaje);
-    alert(mensaje2);
-    alert(mensaje3);
-    alert(mensaje4);
+         switch(razaGatos){
+                case "siames":
+                contSiames++
+                break;
+
+                case "turco":
+                contTurco++;
+                break;
+
+                case "peterbal":
+                contPeterbald++
+                break;
+
+                case "generico":
+                contGenerico++;
+                break;
+         }
+
+         if(contSiames > contGenerico && contSiames > contPeterbald && contSiames > contTurco){
+            acumPromedioS = acumPromedioS + edad
+             mensaje5 = "la raza de gato con mas cantidad es siames y su promedio de edad es "+promedioSiames;
+
+          }
+
+          if(contPeterbald > contGenerico && contPeterbald > contSiames && contPeterbald > contTurco){
+             mensaje5 = "la raza de gato con mas cantidad es peterbald";
+          }
+
+          if(contGenerico > contPeterbald && contGenerico > contSiames && contGenerico > contTurco){
+             mensaje5 = "la raza de gato con mas cantidad es genericos";
+          }
+
+          if(contTurco > contPeterbald && contTurco > contSiames && contTurco > contGenerico){
+             mensaje5 = "la raza de gato con mas cantidad es turcos";
+          }
+     }
+
+     promedioSiames = acumPromedioS / contSiames
+
+         
+
+    //alert(mensaje);
+    //alert(mensaje2);
+    //alert(mensaje3);
+    //alert(mensaje4);
+    alert(mensaje5);
+    
 }
