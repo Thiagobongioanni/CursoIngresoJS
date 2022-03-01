@@ -217,12 +217,18 @@ let mensaje;
  let nombreMasViejoPajaro;
  let nombreMasViejoOtros;
  let nombreMasViejoGato;
- let contSiames;
- let contTurco;
- let contPeterbald;
- let contGenerico;
+ let contSiames=0;
+ let contTurco=0;
+ let contPeterbald=0;
+ let contGenerico=0;
  let acumPromedioS=0;
- let promedioSiames;
+ let acumPromedioT=0;
+ let acumPromedioP=0;
+ let acumPromedioG=0;
+ let promedioS;
+ let promedioT;
+ let promedioP;
+ let promedioG;
  let i;
  let mensaje;
  let mensaje2;
@@ -231,7 +237,7 @@ let mensaje;
  let mensaje5;
 
 
-     for(i=0;i<2;i++){      
+     for(i=0;i<3;i++){      
          ingresoMascota = prompt("ingrese su mascota");
          while(ingresoMascota != "gato" && ingresoMascota !="perro" && ingresoMascota != "pajaro" && ingresoMascota != "otros"){
         	   ingresoMascota = prompt("ingrese una mascota valida");
@@ -304,49 +310,51 @@ let mensaje;
 
          switch(razaGatos){
                 case "siames":
-                contSiames++
+                contSiames++;
+                acumPromedioS = acumPromedioS + edad;
                 break;
 
                 case "turco":
                 contTurco++;
+                acumPromedioT = acumPromedioT + edad;
                 break;
 
                 case "peterbal":
                 contPeterbald++
+                acumPromedioP = acumPromedioP + edad;
                 break;
 
                 case "generico":
                 contGenerico++;
+                acumPromedioG = acumPromedioG + edad;
                 break;
          }
-
-         if(contSiames > contGenerico && contSiames > contPeterbald && contSiames > contTurco){
-            acumPromedioS = acumPromedioS + edad
-             mensaje5 = "la raza de gato con mas cantidad es siames y su promedio de edad es "+promedioSiames;
-
-          }
-
-          if(contPeterbald > contGenerico && contPeterbald > contSiames && contPeterbald > contTurco){
-             mensaje5 = "la raza de gato con mas cantidad es peterbald";
-          }
-
-          if(contGenerico > contPeterbald && contGenerico > contSiames && contGenerico > contTurco){
-             mensaje5 = "la raza de gato con mas cantidad es genericos";
-          }
-
-          if(contTurco > contPeterbald && contTurco > contSiames && contTurco > contGenerico){
-             mensaje5 = "la raza de gato con mas cantidad es turcos";
-          }
      }
 
-     promedioSiames = acumPromedioS / contSiames
+     promedioS = acumPromedioS / contSiames;
+     promedioT = acumPromedioT / contTurco;
+     promedioP = acumPromedioP / contPeterbald;
+     promedioG = acumPromedioG / contGenerico;
+     
+     if(contSiames > contGenerico && contSiames > contPeterbald && contSiames > contTurco){
+         mensaje5 = "la raza de gato con mas cantidad es siames y su promedio de edad es "+promedioS;
+     }
 
-         
+     if(contPeterbald > contGenerico && contPeterbald > contSiames && contPeterbald > contTurco){
+        mensaje5 = "la raza de gato con mas cantidad es peterbald y su promedio de edad es de "+promedioP;
+     }
 
-    //alert(mensaje);
-    //alert(mensaje2);
-    //alert(mensaje3);
-    //alert(mensaje4);
+     if(contGenerico > contPeterbald && contGenerico > contSiames && contGenerico > contTurco){
+        mensaje5 = "la raza de gato con mas cantidad es genericos y su promedio de edad es "+promedioG;
+     }
+
+     if(contTurco > contPeterbald && contTurco > contSiames && contTurco > contGenerico){
+        mensaje5 = "la raza de gato con mas cantidad es turcos y su promedio de edad es "+promedioT;
+     }
+
+    alert(mensaje);
+    alert(mensaje2);
+    alert(mensaje3);
+    alert(mensaje4);  
     alert(mensaje5);
-    
 }
