@@ -368,9 +368,23 @@ let mensaje;
  let temperaturaIngresada;
  let contTemperatura=0;
  let contTI=0;
+ let contPAT=0;
+ let conPBT=0;
+ let promedioHab;
+ let promedioPAT;
+ let acumMenosHabitantes=0;
+ let totalHabitantes;
+ let habitantesPAT=0;
+ let nombreMenosPoblado;
+ let minimaTemp=0;
+ let acumContinenteMasCantidad;
+ let bandera=1;
+ let bandera2=1;
  let i;
+ let mensaje;
+ let mensaje2;
 
-     for(i=0;i<1;i++){
+     for(i=0;i<5;i++){
          ingresePais = prompt("ingrese el nombre de un pais")
          while(isNaN(ingresePais)==false){
                ingresePais = prompt("ingrese un pais valido");
@@ -381,38 +395,93 @@ let mensaje;
                ingreseContinente = prompt("ingrese un continente valido");
          }
 
-         cantidadHabitantes = prompt("ingrese la cantidad de habitantes");
+         cantidadHabitantes = parseInt(prompt("ingrese la cantidad de habitantes"));
          while(isNaN(cantidadHabitantes)==true || cantidadHabitantes < 1 || cantidadHabitantes > 7000000){
-               cantidadHabitantes = prompt("ingrese una cantidad de habitantes valida");
+               cantidadHabitantes = parseInt(prompt("ingrese una cantidad de habitantes valida"));
          } 
          
          nivelPobreza = prompt("ingrese el nivel de pobreza");
          while(isNaN(nivelPobreza)==false || nivelPobreza != "pobre" && nivelPobreza != "rico" && nivelPobreza != "muy rico"){   
                nivelPobreza = prompt("ingrese un nivel de pobreza valido o ingrese un continente pobre"); 
          }
-
          if(ingreseContinente == "europa" && nivelPobreza == "pobre" ){
                  nivelPobreza = prompt("ingrese un nivel de pobreza valido o ingrese un continente pobre");          
          }
 
-         temperaturaIngresada = prompt("ingrese la temperatura");
+         temperaturaIngresada = parseFloat(prompt("ingrese la temperatura"));
          while(isNaN(temperaturaIngresada)==true || temperaturaIngresada < -50 || temperaturaIngresada > 50){
                temperaturaIngresada = prompt("ingrese una temperaturaIngresada valida entre -50° y 50°");
          } 
 
          if((temperaturaIngresada%2)== 0){
             contTemperatura++;
-            mensaje = "la cantidad de numeros pares ingresados en temperatura es de:"+temperatura;
          }
 
-         //probar
-         if((temperaturaIngresada%2)== 1){
+         if((temperaturaIngresada%2)== 1 && ingreseContinente == "europa"){
             contTI++
-            mensaje2 = "la cantidad de impares en las temperaturas ingresadas es de:"+contTI;
          }
+
+         if(bandera == 1 || acumMenosHabitantes > cantidadHabitantes){
+            acumMenosHabitantes = acumMenosHabitantes + cantidadHabitantes;
+            nombreMenosPoblado = ingresePais;
+            bandera = 0;
+         }
+
+         if(temperaturaIngresada > 40){
+            contPAT++;
+            habitantesPAT = habitantesPAT + cantidadHabitantes
+         }
+
+         if(temperaturaIngresada <= 0){
+            conPBT++;
+           
+         }
+
+         if(bandera2 == 1 || temperaturaIngresada < minimaTemp){
+            minimaTemp = minimaTemp + temperaturaIngresada;
+            nombrePaisMinimaTemp = ingresePais;
+            bandera2 = 0;
+         }
+
+         switch(cantidadHabitantes){
+             case "america":  
+                if(america > asia && america > oceania && america > europa){
+                   mensaje5 = "el continente con mas habitantes es america";
+                }
+                break;
+
+             case "europa":
+                if(europa > asia && europa > america && europa > oceania){
+                   mensaje5 = "el continente con mas habitantes es europa";
+                } 
+                break;
+             
+             case "oceania"
+                if(oceania > europa && oceania > asia && oceania > america){
+                   mensaje5 = "el continente con mas habitantes es oceania ";
+                }
+                break;
+
+             case "asia"
+               if(asia > europa && asia > oceania && asia > america){
+                  mensaje5 = "el continente con mas habitantes es asia";
+               }
+               break;
      }
 
-     alert(mensaje);
-     alert(mensaje2);
+     totalHabitantes = cantidadHabitantes + cantidadHabitantes + cantidadHabitantes + cantidadHabitantes + cantidadHabitantes;
+     promedioHab = totalHabitantes / 2;
 
+     promedioPAT = habitantesPAT/contPAT;
+
+      mensaje = "la cantidad de numeros pares ingresados en temperatura es de:"+contTemperatura+ 
+      "\n la cantidad de impares en las temperaturas de europa es de:"+contTI+ 
+      "\n el nombre del pais con menos habitantes es "+nombreMenosPoblado+" y la cantidad es de "+acumMenosHabitantes+ 
+      "\n la cantidad de paises que supera los 40° es de "+contPAT+" y la cantidadd de paises con temperaturas bajo cero es de "+conPBT+ 
+      "\n el promedio de habitantes entre los paises ingresados es de "+promedioHab+
+      "\n el promedio de habitantes entre paises de altas temperaturas es "+promedioPAT+
+      "\n la temperatura minima ingresada es de "+minimaTemp+" y el nombre del pais con esa temperatura es "+nombrePaisMinimaTemp+
+
+      alert(mensaje);
+      alert(mensaje2);
 }
