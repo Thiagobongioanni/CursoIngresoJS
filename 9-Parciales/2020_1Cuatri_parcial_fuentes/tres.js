@@ -360,7 +360,7 @@ let mensaje;
     alert(mensaje5);
 }*/
 
-{
+/*{
  let ingresePais;
  let ingreseContinente;
  let cantidadHabitantes;
@@ -484,4 +484,228 @@ let mensaje;
 
       alert(mensaje);
       alert(mensaje2);
+}*/
+/*1)De 5 personas que ingresan al hospital se deben tomar y validar los siguientes datos:
+nombre, altura, peso y sexo.
+
+a)informar la cantidad de personas de sexo femenino.
+
+b)la altura promedio en total
+
+c)el nombre del hombre con menos peso(si lo hay)
+
+Pedir datos por prompt y mostrar por document.write
+*/
+/*{ 
+ let nombreIngresado;
+ let alturaIngresada;
+ let pesoIngresado;
+ let sexoIngresado;
+ let promedioAltura;
+ let contMujeres=0;
+ let contAltos=0;
+ let minimoPeso=0;
+ let bandera=1;
+ let i;
+
+     for(i=0;i<5;i++){
+        nombreIngresado = prompt("ingrese su nombre");
+        while(isNaN(nombreIngresado)==false){
+             nombreIngresado = prompt("error ingrese un nombre");
+        }
+
+        alturaIngresada = parseFloat(prompt("ingrese su altura"));
+        while(isNaN(alturaIngresada)==true){
+             alturaIngresada = parseFloat(prompt("error ingrese una altura valida"));
+        }
+
+        pesoIngresado = parseFloat(prompt("ingrese su peso"));
+        while(isNaN(pesoIngresado)==true){
+             pesoIngresado = parseFloat(prompt("ingrese un peso valido"));
+        }
+        
+
+        sexoIngresado = prompt("ingrese su sexo");
+        while(sexoIngresado != "masculino" && sexoIngresado != "femenino" && sexoIngresado != "nobinario"){
+              sexoIngresado = prompt("ingrese un sexo valido");
+          }
+
+        if(sexoIngresado == "femenino"){
+           contMujeres++
+        }
+
+        if(alturaIngresada < 230){
+           contAltos++;
+        }
+
+        if(bandera == 1 || sexoIngresado == "masculino"  && pesoIngresado < minimoPeso){
+           minimoPeso = minimoPeso + pesoIngresado;
+           nombreMenorPeso = nombreIngresado;
+           bandera = 0;
+        }
+
+     }
+
+     promedioAltura = alturaIngresada/contAltos;
+     
+     document.write("la cantidad de mujeres es "+contMujeres+ "<br>");
+     document.write("el promedio de la altura es "+promedioAltura+ "<br>");
+     document.write("el nombre del hombre con menos peso es "+nombreMenorPeso);
+}*/
+
+ /*2)De una compra debes ingresar una cantidad indeterminada de productos, validando los siguientes datos:
+
+nombre de producto, precio, unidades, tipo(minorista o mayorista)
+
+a)informar el precio total de la compra.
+
+b)el nombre del producto más caro de tipo minorista
+
+c)el nombre del producto con menos unidades*/
+/*{
+ let nombreProducto;
+ let precioProducto;
+ let unidades;
+ let tipo;
+ let precioTotal;
+ let precioProductoCaro=0;
+ let nombreProductoCaro;
+ let menosUnidades=0;
+ let nombreProductoMenosUnidades;
+ let respuesta="s";
+ let bandera=1;
+ let bandera2=1;
+
+     while(respuesta == "s"){
+           nombreProducto = prompt("ingrese el nombre del producto");
+           while(isNaN(nombreProducto)==false){
+                 nombreProducto = prompt("ingrese un producto valido");
+           }
+
+           precioProducto = parseFloat(prompt("ingrese el precio"));
+           while(isNaN(precioProducto)==true || precioProducto < 0){
+                 precioProducto = parseFloat(prompt("ingrese un precio valido"));
+           } 
+
+           unidades = parseInt(prompt("ingrese la cantidad de unidades"));
+           while(isNaN(unidades)==true){
+                 unidades = parseInt(prompt("ingrese una cantidad validad"));
+           }
+
+           tipo = prompt("ingrese un tipo (minorista/mayorista)");
+           while(isNaN(tipo)==false || tipo != "minorista" && tipo != "mayorista"){
+                 tipo = prompt("ingrese un tipo valido");
+           }
+
+           if(bandera == 1 || precioProducto > precioProductoCaro){
+             precioProductoCaro = precioProductoCaro + precioProducto;
+             nombreProductoCaro = nombreProducto;
+             bandera = 0;
+           }
+
+           if(bandera2 == 1 || unidades < menosUnidades){
+              menosUnidades = menosUnidades + unidades;
+              nombreProductoMenosUnidades = nombreProducto;
+              bandera2 = 0
+           }
+
+           respuesta = prompt("quiere ingresar mas productos? responda s/n");
+    }
+
+    precioTotal = precioProducto * unidades;
+
+    mensaje = "el precio total de la compra es de $"+precioTotal+"\n el nombre del producto más caro de tipo minorista es "+nombreProductoCaro+"\n el nombre del producto con menos unidades es "+nombreProductoMenosUnidades;
+
+    alert(mensaje);
+}*/
+
+
+/*3)Nos ingresan una cantidad indeterminada de estadías de vacaciones, validando los datos ingresados:
+
+nombre del pasajero titular,destino ( “Brasil”, “Caribe” o “Europa”), temporada(“alta”,”baja”,“media”), cantidad de pasajeros que viajan.
+
+informar:
+
+a)el lugar destino mas elegido.
+
+b)el nombre del pasajero titular que lleva menos pasajeros.
+
+c)el promedio de personas, que viajan en temporada alta.*/
+{
+ 
+ let pasajeroTitular;
+ let destino;
+ let temporada;
+ let cantidadPasajeros;
+ let menosPasajeros=0;
+ let titularMenosPasajeros;
+ let cantidadAlta=0;
+ let contBr=0;
+ let contEuropa=0;
+ let contCaribe=0;
+ let bandera=1;
+ let respuesta="s";
+ let mensaje;
+
+     while(respuesta == "s"){ 
+           pasajeroTitular = prompt("ingrese el nombre del pasajero titular");
+           while(isNaN(pasajeroTitular)==false){
+                 pasajeroTitular = prompt("error ingrese un nombre");
+           }
+           
+           destino = prompt("ingrese el destino al que desea viajar entre brasil/caribe o europa");
+           while(isNaN(destino)==false || destino != "brasil" && destino != "caribe" && destino != "europa"){
+                 destino = prompt("ingrese un destino valido")
+           }
+
+           temporada = prompt("ingrese la temporada en la que desea viajar (alta,baja,media)");
+           while(isNaN(temporada)==false || temporada != "alta" && temporada != "baja" && temporada != "media"){
+                 temporada = prompt("ingrese una temporada valida")
+           }
+
+           cantidadPasajeros = parseInt(prompt("ingrese la cantidad de pasajeros"));
+           while(isNaN(cantidadPasajeros)==true){
+                 cantidadPasajeros = parseInt(prompt("ingrese una cantidad valida"));
+           }
+
+           if(bandera == 1 || cantidadPasajeros < menosPasajeros){
+              menosPasajeros = menosPasajeros + cantidadPasajeros;
+              titularMenosPasajeros = pasajeroTitular;
+              bandera = 0;
+            }
+
+           switch(destino){
+                 case "brasil":
+                 contBr++;
+                 break;
+
+                 case "caribe":
+                 contCaribe++;
+                 break;
+
+                 case "europa":
+                 contEuropa++;
+                 break;
+           }
+
+           if(contBr > contCaribe && contBr > contEuropa){
+              mensaje  = "el destino mas elejido fue brasil ";
+           }
+
+           if(contEuropa > contCaribe && contEuropa > contBr){
+              mensaje = " el destino mas elejido fue europa";
+           }
+
+           if(contCaribe > contEuropa && contCaribe > contBr){
+              mensaje = "el destino mas elejido fue caribe ";
+           }
+
+           respuesta = prompt("quiere ingresar otro viaje? s/n");
+     }
+
+     promedio = cantidadPasajeros/cantidadAlta
+
+      alert(mensaje);
+      alert("el titular que lleva menos pasajeros se llama "+titularMenosPasajeros);
+
 }
