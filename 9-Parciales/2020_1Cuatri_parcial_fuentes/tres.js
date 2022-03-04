@@ -359,3 +359,60 @@ let mensaje;
     alert(mensaje4);  
     alert(mensaje5);
 }*/
+
+{
+ let ingresePais;
+ let ingreseContinente;
+ let cantidadHabitantes;
+ let nivelPobreza;
+ let temperaturaIngresada;
+ let contTemperatura=0;
+ let contTI=0;
+ let i;
+
+     for(i=0;i<1;i++){
+         ingresePais = prompt("ingrese el nombre de un pais")
+         while(isNaN(ingresePais)==false){
+               ingresePais = prompt("ingrese un pais valido");
+         }
+
+         ingreseContinente = prompt("ingrese el continente");
+         while(isNaN(ingreseContinente)==false || ingreseContinente != "america" && ingreseContinente != "asia" && ingreseContinente != "europa" && ingreseContinente != "africa" && ingreseContinente != "oceania"){
+               ingreseContinente = prompt("ingrese un continente valido");
+         }
+
+         cantidadHabitantes = prompt("ingrese la cantidad de habitantes");
+         while(isNaN(cantidadHabitantes)==true || cantidadHabitantes < 1 || cantidadHabitantes > 7000000){
+               cantidadHabitantes = prompt("ingrese una cantidad de habitantes valida");
+         } 
+         
+         nivelPobreza = prompt("ingrese el nivel de pobreza");
+         while(isNaN(nivelPobreza)==false || nivelPobreza != "pobre" && nivelPobreza != "rico" && nivelPobreza != "muy rico"){   
+               nivelPobreza = prompt("ingrese un nivel de pobreza valido o ingrese un continente pobre"); 
+         }
+
+         if(ingreseContinente == "europa" && nivelPobreza == "pobre" ){
+                 nivelPobreza = prompt("ingrese un nivel de pobreza valido o ingrese un continente pobre");          
+         }
+
+         temperaturaIngresada = prompt("ingrese la temperatura");
+         while(isNaN(temperaturaIngresada)==true || temperaturaIngresada < -50 || temperaturaIngresada > 50){
+               temperaturaIngresada = prompt("ingrese una temperaturaIngresada valida entre -50° y 50°");
+         } 
+
+         if((temperaturaIngresada%2)== 0){
+            contTemperatura++;
+            mensaje = "la cantidad de numeros pares ingresados en temperatura es de:"+temperatura;
+         }
+
+         //probar
+         if((temperaturaIngresada%2)== 1){
+            contTI++
+            mensaje2 = "la cantidad de impares en las temperaturas ingresadas es de:"+contTI;
+         }
+     }
+
+     alert(mensaje);
+     alert(mensaje2);
+
+}
