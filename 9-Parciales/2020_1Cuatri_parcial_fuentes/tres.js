@@ -204,7 +204,8 @@ let mensaje;
     document.write(mensaje);
 }*/
 
-{
+//simil parcial 3 hecho
+/*{
  let ingresoMascota;
  let nombreMascota;
  let razaPerros;
@@ -237,7 +238,7 @@ let mensaje;
  let mensaje5;
 
 
-     for(i=0;i<3;i++){      
+     for(i=0;i<10;i++){      
          ingresoMascota = prompt("ingrese su mascota");
          while(ingresoMascota != "gato" && ingresoMascota !="perro" && ingresoMascota != "pajaro" && ingresoMascota != "otros"){
         	   ingresoMascota = prompt("ingrese una mascota valida");
@@ -357,4 +358,4 @@ let mensaje;
     alert(mensaje3);
     alert(mensaje4);  
     alert(mensaje5);
-}
+}*/
