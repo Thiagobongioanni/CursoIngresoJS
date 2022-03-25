@@ -7,7 +7,7 @@ ejercicio 1 */
 function mostrar()
 {
 
-alert("esto funciona de maravilla");
+alert("esto funciona de maravillas");
 }
 
 
